@@ -14,6 +14,10 @@ export default class Modal extends React.Component {
     style: {}
   }
 
+  status () {
+    return this.state.isVisible
+  }
+
   open () {
     this.setState({isVisible: true})
   }

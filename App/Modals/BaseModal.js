@@ -8,4 +8,8 @@ export default class BaseModal extends React.Component{
   close () {
     this.modal.close()
   }
+
+  status () {
+    this.modal.status()
+  }
 }

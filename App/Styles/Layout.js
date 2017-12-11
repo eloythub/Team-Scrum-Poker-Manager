@@ -3,6 +3,14 @@ import { Constants } from 'expo'
 
 const {width, height} = Dimensions.get('window')
 
+function getRandomColor () {
+  function randomCodeColor () {
+    return parseInt(Math.random() * (255 - 40)) - 40
+  }
+
+  return `rgba(${randomCodeColor()}, ${randomCodeColor()}, ${randomCodeColor()}, 0.8)`
+}
+
 export default StyleSheet.create({
   statusBar: {
     width,
@@ -15,11 +23,12 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  scrumContainer: {
+    flex: 1
+  },
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    //alignItems: 'center',
-    //justifyContent: 'center',
   },
   header: {
     flex: 1,
@@ -35,5 +44,24 @@ export default StyleSheet.create({
     justifyContent: 'flex-start',
     paddingLeft: 10,
     paddingRight: 10
+  },
+  backendModalTouch: {
+    //flex: 1
+  },
+  objectModalTouch: {
+    //flex: 1
+  },
+  imageWrapper: {
+    width: 40,
+    height: 40,
+    borderRadius: 40,
+    backgroundColor: getRandomColor(),
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  imageText: {
+    fontSize: 16,
+    fontWeight: 'bold'
   }
 })

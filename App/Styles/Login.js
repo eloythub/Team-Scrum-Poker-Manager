@@ -17,6 +17,7 @@ export default StyleSheet.create({
     padding: 10,
     minWidth: 200,
     borderRadius: 20,
-    marginBottom: 10
+    marginBottom: 10,
+    textAlign: 'center'
   }
 })

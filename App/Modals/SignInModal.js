@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import { Image, TextInput, View, Button } from 'react-native'
+import { Image, TextInput, View, Button, Alert } from 'react-native'
 import { BlurView } from 'expo'
 import Modal from '../Components/Modal'
 import BaseModal from './BaseModal'
@@ -13,13 +13,28 @@ export default class SignInModal extends BaseModal {
     super(props)
 
     this.state = {
-      email: '',
-      password: ''
+      name: ''
     }
   }
 
   static propTypes = {
     signIn: PropTypes.func
+  }
+
+  componentWillReceiveProps () {
+    this.setState({})
+  }
+
+  signIn () {
+    if (!this.state.name) {
+      Alert.alert('Name is mandetory')
+
+      return
+    }
+
+    this.props.signIn(this.state.name)
+
+    this.close()
   }
 
   render () {
@@ -34,33 +49,19 @@ export default class SignInModal extends BaseModal {
           <View style={LoginStyle.transparentContainer}>
             <Image source={Images.logo} style={LoginStyle.logo}/>
 
-            <TextInput ref={ref => this.email = ref}
-                       placeholder="EMAIL"
-                       caption="EMAIL"
+            <TextInput placeholder="NAME"
+                       caption="NAME"
                        allowFontScaling={true}
                        placeholderTextColor="#777777"
                        keyboardType="email-address"
                        autoCorrect={false}
                        fontSize={16}
                        style={LoginStyle.textInput}
-                       returnKeyType="next"
-                       onSubmitEditing={() => this.password.focus()}
-                       onChangeText={(email) => this.setState({email})}
-            />
-            <TextInput ref={ref => this.password = ref}
-                       placeholder="PASSWORD"
-                       caption="PASSWORD"
-                       placeholderTextColor="#777777"
-                       autoCorrect={false}
-                       fontSize={16}
-                       style={LoginStyle.textInput}
-                       returnKeyType="done"
-                       secureTextEntry={true}
-                       onSubmitEditing={() => this.props.signIn(this.state.email, this.state.password)}
-                       onChangeText={(password) => this.setState({password})}
+                       returnKeyType="join"
+                       onChangeText={(name) => this.setState({name})}
             />
 
-            <Button onPress={this.props.signIn.bind(this, this.state.email, this.state.password)} title="Sign in / Sign up" />
+            <Button onPress={this.signIn.bind(this)} title="Join" />
             <Button onPress={this.close.bind(this)} title="Cancel" color="#ff0000" />
           </View>
         </BlurView>
