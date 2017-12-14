@@ -3,7 +3,8 @@ import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
   transparentContainer: {
     backgroundColor: 'rgba(255, 255, 255, 0.6)',
-    padding: 30,
+    paddingTop: 20,
+    paddingBottom: 20,
     borderRadius: 20,
     alignItems: 'center'
   },
@@ -22,7 +23,9 @@ export default StyleSheet.create({
   },
   qrCodeTextBottom: {
     padding: 10,
-    fontSize: 20
+    fontSize: 20,
+    fontWeight: '300',
+    fontFamily: 'Helvetica Neue'
   },
   qrCodeReader: {
     height: 170,

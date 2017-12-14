@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Text, View, Button, Alert } from 'react-native'
 import SessionStatusStyle from '../Styles/SessionStatus'
 import UserImage from '../Components/UserImage'
+import ucfirst from 'ucfirst'
 
 export default class SessionStatus extends React.Component {
   constructor (props) {
@@ -18,7 +19,8 @@ export default class SessionStatus extends React.Component {
   static propProps = {
     height: PropTypes.number,
     session: PropTypes.object,
-    onSignOut: PropTypes.func
+    onSignOut: PropTypes.func,
+    onResult: PropTypes.func
   }
 
   componentWillReceiveProps () {
@@ -53,14 +55,14 @@ export default class SessionStatus extends React.Component {
           {
             user
               ? <Text>
-              Name: {user.name}
+              Name: {ucfirst(user.name)}
             </Text>
               : null
           }
           {
             session
               ? <Text>
-              Session: {session.sessionName}
+              Session: {ucfirst(session.sessionName)}
             </Text>
               : null
           }
@@ -68,7 +70,7 @@ export default class SessionStatus extends React.Component {
         {
           session
             ? <View style={SessionStatusStyle.action}>
-            <Button title="Start Voting !" color="red" onPress={() => {}}/>
+            <Button title="Result!!!" color="red" onPress={this.props.onResult.bind(this)}/>
           </View>
             : null
         }

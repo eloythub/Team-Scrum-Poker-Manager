@@ -31,6 +31,28 @@
     "ucfirst": "^1.0.0"
   },
   "config": {
+    "admob": {
+      "adUnitId": {
+        "ios": "ca-app-pub-5270229947708031~4104606679",
+        "android": ""
+      },
+      "bottom-ad": {
+        "ios": "ca-app-pub-5270229947708031/5253913105",
+        "android": ""
+      },
+      "sign-in-modal-ad": {
+        "ios": "ca-app-pub-5270229947708031/1063510365",
+        "android": ""
+      },
+      "start-modal-ad": {
+        "ios": "ca-app-pub-5270229947708031/4223245924",
+        "android": ""
+      },
+      "result-modal-ad": {
+        "ios": "ca-app-pub-5270229947708031/9419732284",
+        "android": ""
+      }
+    },
     "firebase": {
       "databaseURL": "https://team-scrum-poker-manager.firebaseio.com"
     }

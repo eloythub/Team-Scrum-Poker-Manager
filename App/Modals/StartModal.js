@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Alert, Button, KeyboardAvoidingView, Text, TextInput, View } from 'react-native'
-import { BarCodeScanner, BlurView, Permissions } from 'expo'
+import { Alert, Button, KeyboardAvoidingView, Platform, Text, TextInput, View } from 'react-native'
+import { AdMobBanner, BarCodeScanner, BlurView, Permissions } from 'expo'
+import { config } from '../package.json'
 import QRCode from 'react-native-qrcode'
 import Modal from '../Components/Modal'
 import BaseModal from './BaseModal'
@@ -22,11 +23,12 @@ export default class StartModal extends BaseModal {
       sessionId: '',
       sessionName: '',
       hasCameraPermission: null,
+      isQrProcessing: false,
     }
   }
 
   async componentWillReceiveProps (props) {
-    if (props.session){
+    if (props.session) {
       await this.setState({
         sessionId: props.session.sessionId,
         sessionName: props.session.sessionName,
@@ -59,6 +61,11 @@ export default class StartModal extends BaseModal {
   }
 
   async qrCodeDetect ({data}) {
+    const {isQrProcessing} = this.state
+
+    if (isQrProcessing) {
+      return
+    }
 
     const [sessionName = '', sessionId = ''] = data.split('-')
 
@@ -66,7 +73,15 @@ export default class StartModal extends BaseModal {
       return
     }
 
+    await this.setState({
+      isQrProcessing: true
+    })
+
     await this.props.join(sessionName, sessionId)
+
+    await this.setState({
+      isQrProcessing: false
+    })
   }
 
   async startNewSession () {
@@ -78,24 +93,32 @@ export default class StartModal extends BaseModal {
 
     sessionId = this.getRandom(100000000000, 9999999999)
 
-    await this.setState({
+    const startResult = await this.props.start({
       sessionId,
       sessionName
     })
 
-    await this.props.start({
+    if (!startResult) {
+      return
+    }
+
+    await this.setState({
       sessionId,
       sessionName
     })
   }
 
   async endSession () {
+    const endResult = await this.props.end()
+
+    if (!endResult) {
+      return
+    }
+
     await this.setState({
       sessionId: '',
       sessionName: ''
     })
-
-    await this.props.end()
   }
 
   renderJoin () {
@@ -159,6 +182,11 @@ export default class StartModal extends BaseModal {
                   style={LayoutStyle.modalContainer}>
           <KeyboardAvoidingView behavior="padding">
             <View style={StartStyle.transparentContainer}>
+              <AdMobBanner
+                bannerSize="banner"
+                adUnitID={config.admob['start-modal-ad'][Platform.OS]}
+                didFailToReceiveAdWithError={(e) => console.log('start-modal-ad:', e)}/>
+              <View style={LayoutStyle.space} />
               {this.renderJoin()}
 
               <TextInput placeholder="Session Name"
@@ -171,8 +199,7 @@ export default class StartModal extends BaseModal {
                          fontSize={16}
                          style={StartStyle.textInput}
                          returnKeyType="none"
-                         onChangeText={(text) => this.setState({sessionName: text})}
-              />
+                         onChangeText={(text) => this.setState({sessionName: text})}/>
 
               {this.renderQrCode()}
 
@@ -181,7 +208,7 @@ export default class StartModal extends BaseModal {
                   ? <Button onPress={this.endSession.bind(this)} title="End Session"/>
                   : <Button onPress={this.startNewSession.bind(this)} title="Start New Session"/>
               }
-              <Button onPress={this.close.bind(this)} title="Cancel" color="#ff0000"/>
+              <Button onPress={this.close.bind(this)} title="Close" color="#ff0000"/>
             </View>
           </KeyboardAvoidingView>
         </BlurView>

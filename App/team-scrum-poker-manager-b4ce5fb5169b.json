@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "team-scrum-poker-manager",
+  "private_key_id": "b4ce5fb5169b29e411c73fad5ed57032e8b89086",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC99Gw4zUyCORZD\nE1evMGWFqCcVMlTdXSovHZOD/tU+7i+OjhNx6FnkKaa4qIugN6rTbsK3FcR+QCXf\n/6lwS5CqyXWhwcCUffWb9gAtE1p+nJlYguazothuc4EgpfafzKLEeXBbiP3s628Q\nMKSa0vdEUfwyrMpFSK7o6adxCR95UFd78wy1bOq0gu+vEs8sz4eWlCfo1bAKfCrZ\nMd6to9XQAoPnkbynSi8U6wvqV0OhpucHMS3LHhKrVjrNq64a6qep6dAPtI3DiaiU\nxGp287ASgDOnk0V7OonyyVJiUw64/p9QaEOgwnHKbfPSYEDamIhMH+DTH3QGO0SQ\n0bTI8V/1AgMBAAECggEAFksW3m29wnTHt5SQEGf6Kj8LYzH2gspZ1pC+jNm+FjYn\nD7B9+Lrfvebjgb2KMYIHAux3XrxnxLdrmofrT1oW/uxI6XSPUP4dcrHi4Gdqkfx4\nBMrMH54Hj6LvrzC7KpL+MVfdR2jjAEi7Tqee0erbiUGj+yCLVqlKmdw+QgZjkr2W\nodwLzEymb3FdHXYyJ2yzPtMutgJU7rL7fV7G4PKPbQq2fwgCxBW407vwYXR6tZE0\nlNSC+LiuhUEhDxjsZe6Ym9LCzKtlC34iVuaVwofICjYLUu0pWlxOnJbLo8p9OgvR\nznsdB6t3rdbUbCSp4HLuFsej/Nhcsx75bbvzn+0hIQKBgQDyJ650PS2WTxriUTPc\n4LJf+j1IZP8cyrRR8SzVilT9xdqvLF6EfP9wmVeoCEIh1ovgSicfGT2caQmHa61b\n28o0k73502zBvV69vvNbIXtq5pKh2JKp60BVOdnkXxz37SoMewDVyKfHAeogsNIo\nKI7eHKL9uoKG3cDx/2FjSwFFRQKBgQDI0LWBLSla0RXSyyWafc+de72Vs9ThMrP8\nxjHcOyQYcJj6GbmXc+HWYbjll6pR3q3Z/NLyUBn3wCO34pn4wIh+DmMiH8iHx7BF\n8pe9iSyhkRtmV2HJQom5rUF/zLjPM8XvCRiQP/ckW4+l912JAcIWXdPU0Whv1GXe\nQIOPlhwi8QKBgQDE5FzlqISzjXhXgh0AQDbo8Qf5IB2KJIs/gTCqJEL84G3yNspX\nQWdU/2mVd7mF1/N9l+19TMGatpEH6hZX9TrRSzuRsUXhtX8eGu+2LmAySG37aKO/\nw0dYxKQVGvzr3YtuAGlqai95EWZz1DHcczXPBUvFsGvHCvGCEtr1qBvNXQKBgHml\nlI3P4cFV7zZmQT05AU+Q6eOJsGdK46U4GnQij1cOvlyiwL5yQFgxkmPiYBaAIihu\n8wo+Y7yk8/4sksERQJ278Wl2f29hE/MLZcg3FIY69LImNOJKIEwOHCNizIEYB8sp\nY2vek8O+g2IyWsLoAb6yz+OXhwBXVe4wfoG4mQrBAoGBANcHwtiZ7sPHF6nvb8+6\npVAUhDVpURzuhsD7EEVd4VsDtU5x6u0D8R9x87n3RkcQGb3rqUXRkl9YUcxNk0Pj\nQ0WR0f7eBf8WPY3xKjcFaEc/LqPSFuxyYLT3/wpNd+ortGa9sht+CVgojaBkzaU7\nGaeoH4trQNNZsQu91paVzJsc\n-----END PRIVATE KEY-----\n",
+  "client_email": "team-scrum-poker-manager@appspot.gserviceaccount.com",
+  "client_id": "109728996177084453542",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/team-scrum-poker-manager%40appspot.gserviceaccount.com"
+}

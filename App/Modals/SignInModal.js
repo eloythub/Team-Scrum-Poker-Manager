@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import { Image, TextInput, View, Button, Alert } from 'react-native'
+import { Image, TextInput, View, Button, Alert, Text, Platform } from 'react-native'
 import { BlurView } from 'expo'
 import Modal from '../Components/Modal'
 import BaseModal from './BaseModal'
 import LayoutStyle from '../Styles/Layout'
 import LoginStyle from '../Styles/Login'
-import Images from '../Images'
+import { config } from '../package.json'
+import { AdMobBanner } from 'expo'
 
 export default class SignInModal extends BaseModal {
   constructor (props) {
@@ -47,8 +48,15 @@ export default class SignInModal extends BaseModal {
                   intensity={80}
                   style={LayoutStyle.modalContainer}>
           <View style={LoginStyle.transparentContainer}>
-            <Image source={Images.logo} style={LoginStyle.logo}/>
+            <AdMobBanner
+              bannerSize="banner"
+              adUnitID={config.admob['sign-in-modal-ad'][Platform.OS]}
+              didFailToReceiveAdWithError={(e) => console.log('sign-in-modal-ad:', e)} />
 
+            <View style={LayoutStyle.space}/>
+            <Text style={LoginStyle.description}>
+              Who are you?
+            </Text>
             <TextInput placeholder="NAME"
                        caption="NAME"
                        allowFontScaling={true}
@@ -62,7 +70,7 @@ export default class SignInModal extends BaseModal {
             />
 
             <Button onPress={this.signIn.bind(this)} title="Join" />
-            <Button onPress={this.close.bind(this)} title="Cancel" color="#ff0000" />
+            <Button onPress={this.close.bind(this)} title="Close" color="#ff0000" />
           </View>
         </BlurView>
       </Modal>

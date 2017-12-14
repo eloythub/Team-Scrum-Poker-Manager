@@ -3,14 +3,6 @@ import { Constants } from 'expo'
 
 const {width, height} = Dimensions.get('window')
 
-function getRandomColor () {
-  function randomCodeColor () {
-    return parseInt(Math.random() * (255 - 40)) - 40
-  }
-
-  return `rgba(${randomCodeColor()}, ${randomCodeColor()}, ${randomCodeColor()}, 0.8)`
-}
-
 export default StyleSheet.create({
   statusBar: {
     width,
@@ -26,6 +18,9 @@ export default StyleSheet.create({
   scrumContainer: {
     flex: 1
   },
+  space: {
+    margin: 10
+  },
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -34,8 +29,6 @@ export default StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    //paddingLeft: 5,
-    //paddingRight: 5
   },
   headerIconButton: {
     flex: 1,
@@ -45,23 +38,42 @@ export default StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10
   },
-  backendModalTouch: {
-    //flex: 1
-  },
-  objectModalTouch: {
-    //flex: 1
-  },
   imageWrapper: {
     width: 40,
     height: 40,
     borderRadius: 40,
-    backgroundColor: getRandomColor(),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
   imageText: {
     fontSize: 16,
-    fontWeight: 'bold'
+    fontWeight: '300',
+    fontFamily: 'Helvetica Neue'
+  },
+  admob: {
+    flex: 1,
+    maxHeight: 50,
+    alignItems: 'center'
+  },
+  waitingContainer: {
+    zIndex: 99,
+    width,
+    height,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    //flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)'
+  },
+  waitingBlurView: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 20,
+    padding: 20,
   }
 })

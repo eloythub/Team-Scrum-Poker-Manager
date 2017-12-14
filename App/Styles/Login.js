@@ -4,11 +4,18 @@ export default StyleSheet.create({
   logo: {
     width: 100,
     height: 100,
-    marginBottom: 40
+    marginBottom: 20
+  },
+  description: {
+    marginBottom: 16,
+    fontSize: 20,
+    fontWeight: '400',
+    fontFamily: 'Helvetica Neue'
   },
   transparentContainer: {
     backgroundColor: 'rgba(255, 255, 255, 0.6)',
-    padding: 30,
+    paddingTop: 20,
+    paddingBottom: 20,
     borderRadius: 20,
     alignItems: 'center'
   },
@@ -18,6 +25,7 @@ export default StyleSheet.create({
     minWidth: 200,
     borderRadius: 20,
     marginBottom: 10,
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily: 'Helvetica Neue'
   }
 })

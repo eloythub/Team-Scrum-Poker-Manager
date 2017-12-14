@@ -69,7 +69,6 @@ export default class ScrumPokerCards extends React.Component {
     const pressedCard = _.find(this.state.cards, c => c.value === cardValue)
 
     if (this.state.selectedCard === cardValue) {
-
       this.state.cards.forEach(card => {
         if (card === pressedCard) {
           const coords = this._getCardCoordinates(cardValue)
@@ -79,7 +78,7 @@ export default class ScrumPokerCards extends React.Component {
             Animated.timing(card.y, {toValue: coords.y, duration: 200}),
             Animated.timing(card.width, {toValue: coords.width, duration: 200}),
             Animated.timing(card.height, {toValue: coords.height, duration: 200}),
-            Animated.timing(card.fontSize, {toValue: 50, duration: 200}),
+            Animated.timing(card.fontSize, {toValue: 40, duration: 200}),
           ]).start()
         } else {
           Animated.timing(card.opacity, {
@@ -99,6 +98,7 @@ export default class ScrumPokerCards extends React.Component {
       this.setState({selectedCard: null})
 
     } else {
+      this.props.onSelectCard(cardValue)
 
       this.state.cards.forEach(card => {
         if (card === pressedCard) {
@@ -110,7 +110,7 @@ export default class ScrumPokerCards extends React.Component {
             Animated.timing(card.width, {toValue: coords.width, duration: 200}),
             Animated.timing(card.height, {toValue: coords.height, duration: 200}),
             Animated.timing(card.zIndex, {toValue: 1, duration: 0}),
-            Animated.timing(card.fontSize, {toValue: 190, duration: 200}),
+            Animated.timing(card.fontSize, {toValue: 150, duration: 200}),
           ]).start()
         } else {
           Animated.parallel([
@@ -136,7 +136,7 @@ export default class ScrumPokerCards extends React.Component {
         value: cardValue,
         opacity: new Animated.Value(1),
         zIndex: new Animated.Value(0),
-        fontSize: new Animated.Value(50),
+        fontSize: new Animated.Value(40),
       }, _.mapValues(coords, x => new Animated.Value(x)))
     })
 

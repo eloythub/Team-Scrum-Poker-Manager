@@ -37,6 +37,8 @@ export default StyleSheet.create({
     alignSelf: 'center'
   },
   text: {
-    fontSize: 50
+    fontSize: 40,
+    fontWeight: '300',
+    fontFamily: 'Helvetica Neue'
   }
 })
