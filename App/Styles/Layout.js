@@ -1,5 +1,6 @@
 import { Dimensions, StyleSheet } from 'react-native'
 import { Constants } from 'expo'
+import { ifIphoneX } from 'react-native-iphone-x-helper'
 
 const {width, height} = Dimensions.get('window')
 
@@ -54,7 +55,10 @@ export default StyleSheet.create({
   admob: {
     flex: 1,
     maxHeight: 50,
-    alignItems: 'center'
+    alignItems: 'center',
+    ...ifIphoneX({
+      maxHeight: 90,
+    })
   },
   waitingContainer: {
     zIndex: 99,

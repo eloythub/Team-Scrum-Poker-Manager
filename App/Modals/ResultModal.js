@@ -64,7 +64,7 @@ export default class ResultModal extends BaseModal {
                           <Text style={ResultStyle.userNameText}>{ucfirst(user.name)}</Text>
                         </View>
                         <View style={ResultStyle.userCardValue}>
-                          <Text style={ResultStyle.cardValueText}>{user.cardValue}</Text>
+                          <Text style={ResultStyle.cardValueText}>{user.cardValue || '-'}</Text>
                         </View>
                       </View>
                     )

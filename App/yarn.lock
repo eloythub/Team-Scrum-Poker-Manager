@@ -2964,6 +2964,10 @@ is-upper-case@^1.1.0:
   dependencies:
     upper-case "^1.1.0"
 
+is-url@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/is-url/-/is-url-1.2.2.tgz#498905a593bf47cc2d9e7f738372bbf7696c7f26"
+
 is-utf8@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/is-utf8/-/is-utf8-0.2.1.tgz#4b0da1442104d1b336340e80797e865cf39f7d72"
@@ -4702,6 +4706,10 @@ react-native-gesture-handler@1.0.0-alpha.30:
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.0.0-alpha.30.tgz#7f79c2da5a59cc8ce20cf04c11360409a53bef59"
   dependencies:
     prop-types "^15.5.10"
+
+react-native-iphone-x-helper@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.0.1.tgz#950dbdaca66f458689a7e9697c5beb9bd53f98f2"
 
 react-native-maps@0.17.1:
   version "0.17.1"

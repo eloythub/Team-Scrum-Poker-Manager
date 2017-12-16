@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
 import LayoutStyle from '../Styles/Layout'
-import UserFactory from '../Factories/User'
+import Color from 'color'
 
 export default class UserImage extends React.Component {
   async componentWillReceiveProps () {
@@ -18,12 +18,16 @@ export default class UserImage extends React.Component {
       const g = randomCodeColor()
       const b = randomCodeColor()
 
+      const randomColor = Color({r, g, b}).alpha(0.8)
+
       // if luma was less than 40 => pick another color
-      if (0.2126 * r + 0.7152 * g + 0.0722 * b < 50) {
+      if (randomColor.dark()) {
         return pickRgb()
       }
 
-      return `rgba(${r}, ${g}, ${b}, 0.8)`
+      const [red, green, blue] = randomColor.color
+
+      return `rgba(${red}, ${green}, ${blue}, ${randomColor.valpha})`
     }
 
     if (!global.hasOwnProperty('userColors')) {

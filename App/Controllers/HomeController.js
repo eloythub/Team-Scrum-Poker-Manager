@@ -28,7 +28,7 @@ export default class HomeController extends BaseController {
   }
 
   aboutMe () {
-    //this.aboutMeModal.open()
+    this.aboutMeModal.open()
   }
 
   async signIn (name) {

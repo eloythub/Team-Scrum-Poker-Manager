@@ -8,6 +8,7 @@ import LayoutStyle from '../Styles/Layout'
 import StartModal from '../Modals/StartModal'
 import SignInModal from '../Modals/SignInModal'
 import ResultModal from '../Modals/ResultModal'
+import AboutMeModal from '../Modals/AboutMeModal'
 
 let homeScreen = null
 
@@ -48,6 +49,8 @@ export default class HomeScreen extends HomeController {
         <SignInModal ref={ref => this.signInModal = ref}
                      {...{session, user}}
                      signIn={this.signIn.bind(this)}/>
+
+        <AboutMeModal ref={ref => this.aboutMeModal = ref}/>
       </View>
     )
   }
