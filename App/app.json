@@ -3,9 +3,13 @@
     "sdkVersion": "23.0.0",
     "orientation": "portrait",
     "name": "Scrum Poker Manager",
-    "icon": "./logo.png",
+    "icon": "./Images/app-logo.png",
     "version": "1.0",
+    "privacy": "public",
     "slug": "scrum-poker-manager",
+    "loading": {
+      "icon": "./Images/loading-logo.png"
+    },
     "ios": {
       "bundleIdentifier": "com.eloyt.scrumpokermanager",
       "buildNumber": "0",
@@ -13,8 +17,7 @@
       "supportsTablet": true,
       "infoPlist": {
         "NSCameraUsageDescription": "This app uses the camera to scan the invitation QR code."
-      },
-      "icon": "./logo.png"
+      }
     },
     "android": {
       "package": "com.eloyt.scrumpokermanager"
